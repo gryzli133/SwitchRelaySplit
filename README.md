@@ -6,28 +6,51 @@ To Use the code:
 - change the declaration in .ino file, for example:
 
 {1, 22, 38, 50, 0, "światło w kotłowni"},
+
 {2, 23, 39, 50, 0, "światło w kotłowni"},
+
 {3, 24, 40, 50, 0, "halogeny nad zlewem + roleta wewn."},
+
 {4, 25, 41, 50, 0, "lampa w kuchni na suficie"},
+
 {5, 26, 42, 50, 0, "okap"},
+
 {6, 27, 43, 50, 0, "pasek LED + roleta wewn."},
+
 {7, 28, 44, 50, 0, "halogeny w lewo od HS + roleta wewn. HS lewa"},
+
 {8, 29, 45, 50, 0, "lampa nad stołem"},
+
 {9, 30, 46, 50, 0, "lampa nad sofą"},
+
 {10, 31, 47, 50, 0, "lampa nad stolikiem kawowym"},
+
 {11, 32, 48, 50, 0, "halogeny nad HS + roleta wewn. HS prawa"},
+
 {12, 33, 49, 50, 0, "halogeny w prawo od HS + roleta wewn. FIX"},
+
 {13, 34, 50, 50, 0, "lampa przy schodach od strony wiatrołapu"},
+
 {14, 35, 51, 50, 0, "lampa przy schodach od strony kotłowni"},
+
 {15, 36, 52, 50, 0, "lampa pod schodami przy słupie"},
+
 {16, 37, 53, 50, 0, "lampa nad lustrem w WC na dole"},
+
 {17, A0, A8, 50, 0, "lampa w gabinecie"},
+
 {18, A1, A9, 50, 0, "lampa w gabinecie"},
+
 {19, A2, A10, 50, 0, "lampa w wiatrołapie"},
+
 {20, A3, A11, 50, 0, "lampa w wiatrołapie"},
+
 {21, A4, A12, 50, 0, "lampa w WC na dole"},
+
 {22, A5, A13, 50, 0, "lampa w łazience na dole"},
+
 {23, A6, A14, 50, 0, "lampa w łazience na dole"},
+
 {24, A7, A15, 50, 0, "lampa w łazience na dole"},
 
 
