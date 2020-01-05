@@ -89,7 +89,7 @@ class SwitchRelay
   void Present()
   {
     // Register all sensors to gw (they will be created as child devices)
-     present(CHILD_ID_RELAY, S_COVER, relayDescription, IS_ACK);
+     present(CHILD_ID_RELAY, S_LIGHT, relayDescription, IS_ACK);
   }
 
   void Receive(const MyMessage &message)
