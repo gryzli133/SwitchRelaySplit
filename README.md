@@ -5,6 +5,9 @@ To Use the code:
 - download newest .ino file and all other files to one folder - same name as newest .ino file
 - change the declaration in .ino file, for example:
 
+
+
+
 {1, 22, 38, 50, 0, "światło w kotłowni"},
 
 {2, 23, 39, 50, 0, "światło w kotłowni"},
@@ -52,6 +55,9 @@ To Use the code:
 {23, A6, A14, 50, 0, "lampa w łazience na dole"},
 
 {24, A7, A15, 50, 0, "lampa w łazience na dole"},
+
+
+
 
 
 The values are representing:
