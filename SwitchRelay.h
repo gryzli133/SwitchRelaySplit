@@ -1,4 +1,6 @@
-#define PRESENT_MESSAGE "Switch Relay by Marek"
+#define MIN_SYNC 2000        // Send data to controller not often than every 2s
+#define MAX_SYNC 1800000     // Refresh data to controller at least once every 30min
+
 bool IS_ACK = false; //is to acknowlage
 
 class SwitchRelay
@@ -11,6 +13,9 @@ class SwitchRelay
   int relayPin;
   bool relayON;
   bool relayOFF;
+  const char * relayDescription;  
+  uint32_t lastSync;
+  bool requestSync;  
 
   bool setupMode = false;   // true = setup mode activated -> pass-through mode, Button write directly to relay.
 
@@ -25,13 +30,14 @@ class SwitchRelay
   bool serviceMode = 0;
   
   public:
-  SwitchRelay(int childId, int button, int relay, int debaunce, bool invertedRelay) : msg(childId, V_LIGHT)
+  SwitchRelay(int childId, int button, int relay, int debaunce, bool invertedRelay, const char *descr) : msg(childId, V_LIGHT)
   {
     CHILD_ID_RELAY = childId;
     buttonPin = button;
     relayPin = relay;
     relayON = !invertedRelay;
     relayOFF = invertedRelay;
+    relayDescription = descr;     
     pinMode(buttonPin, INPUT_PULLUP);
     debouncer.attach(buttonPin);
     debouncer.interval(debaunce);
@@ -57,7 +63,12 @@ class SwitchRelay
       {
          saveState(CHILD_ID_RELAY, !loadState(CHILD_ID_RELAY));
          digitalWrite(relayPin, loadState(CHILD_ID_RELAY)?relayON:relayOFF);
-         SyncController();
+         //SyncController();
+         requestSync = true;
+      }
+      if((requestSync && millis() - lastSync > MIN_SYNC) || millis() - lastSync > MAX_SYNC)
+      {
+        SyncController();
       }
     }    
   }       
@@ -66,6 +77,8 @@ class SwitchRelay
   void SyncController()
   {
     send(msg.set(loadState(CHILD_ID_RELAY)));
+    requestSync = false;
+    lastSync = millis();
   }
   
   void SetupMode(bool active)
@@ -76,7 +89,7 @@ class SwitchRelay
   void Present()
   {
     // Register all sensors to gw (they will be created as child devices)
-     present(CHILD_ID_RELAY, S_COVER, PRESENT_MESSAGE, IS_ACK);
+     present(CHILD_ID_RELAY, S_COVER, relayDescription, IS_ACK);
   }
 
   void Receive(const MyMessage &message)
