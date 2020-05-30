@@ -1,6 +1,8 @@
 # SwitchRelaySplit
 Sketch to control Lights using MySensors
 
+This library helps to add multiple smart Lights/Relays to one Arduino board (preferably Arduino MEGA) by just adding one line of code per Light. It is based on MySensors library. Tested with Domoticz, but also worked for Home Assistant (feedback from community).
+
 To Use the code:
 - download newest .ino file and all other files to one folder - same name as newest .ino file
 - change the declaration in .ino file, for example:
