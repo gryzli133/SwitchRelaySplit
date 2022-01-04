@@ -67,5 +67,5 @@ The values are representing:
 2. Pin number of the Button
 3. Pin number of the Relay
 4. Debounce time - if you don't know what it is, just set it to 50 ms
-5. It defines what state of the output the relays needs to switch ON. High Level Trigger = 0; Low level Trigger = 1
+5. Inverted output - For High Level Trigger need to be 0; for Low level Trigger set 1
 6. Description - your Light/Device will show this description to your controller
