@@ -56,7 +56,7 @@ To Use the code:
 
 {23, A6, A14, 50, 0, "lampa w łazience na dole"},
 
-{24, A7, A15, 50, 0, "lampa w łazience na dole"},
+{24, A7, A15, 50, 0, "lampa w łazience na dole"}
 
 
 
